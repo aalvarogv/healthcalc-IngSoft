@@ -81,3 +81,11 @@ En este test se comprueba ahora sí, el correcto funcionamiento del método para
 9. **Test de Tasa Metabólica Basal Correcta Mujer** `testBasalMetabolicRateCorrectoW` 
 Este test es muy similar al anterior, pero para una mujer. Al igual que en el test de tasa metabólica basal incorrecta para una mujer, varian los parámetros usados en comparación al del hombre, pero el resultado final debería ser el mismo.
 En este caso, ese resultado final debería ser que el valor obtenido fuera igual al valor esperado.
+
+
+## Tests results
+
+![La imagen no puede cargarse.](tests.png)
+
+Siguiendo con el enunciado del proyecto, se han implementado tests para comprobar los casos vistos anteriormente.
+Estos tests se han ejecutado de forma correcta, como se puede ver en la imagen.
