@@ -89,3 +89,13 @@ En este caso, ese resultado final debería ser que el valor obtenido fuera igual
 
 Siguiendo con el enunciado del proyecto, se han implementado tests para comprobar los casos vistos anteriormente.
 Estos tests se han ejecutado de forma correcta, como se puede ver en la imagen.
+
+
+## Uso de git y gitHub
+
+![La imagen no puede cargarse.](gitk.png)
+
+Como último apartado de este proyecto de momento, es importante ver el uso de git a lo largo del tiempo.
+Como se puede ver, durante el desarrollo del proyecto se han ido produciendo cambios en ficheros existentes o incluso creaciones de nuevos ficheros. Estos cambios se han ido guardando y comentando mediante ***commits*** usando la herramienta ***git***. En todo momento hemos trabajado en la rama principal de nuestro proyecto, lo que se ve reflejado en la imágen y en el historial de cambios de nuestro repositorio en github.
+
+Estos cambios se irán actualizando a medida que el proyecto vaya creciendo.
