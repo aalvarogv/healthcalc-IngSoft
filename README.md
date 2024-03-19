@@ -165,3 +165,18 @@ Actualmente solo involucramos a un **actor**, el cual sería el *usuario* que ac
 
 En cuanto a las **funcionalidades/casos de uso**, hemos definido las dos ya implementadas en la práctica anterior. La acción principal de la calculadora sería *realizar un cálculo*, que se complementa mediante una generalización por *realizar un cálculo del peso ideal (IW)* y *realizar un cálculo de la tasa metabólica basal (BMR)*. A su vez, la realización del caso de uso *realizar cálculo* necesita de la acción *introducir datos* para poder funcionar. De esta forma, al igual que hemos descompuesto el cálculo en los dos casos posibles actualmente, el caso de uso *introducir datos* se complementa mediante una generalización de los casos para cada cálculo, una introducción para el caso de calcular el peso ideal y otra introducción distinta para calcular la tasa metabólica basal.
 </details>
+
+<details>
+<summary>Actualización Diagrama Casos de Uso</summary>
+
+<p align="center">
+    <img src="images/diagrama2-CasosUso.jpg" height="300" title="diagrama2">
+</p>
+
+Para este paso, se han implementado 2 nuevos casos de uso que no estaban contemplados en la calculadora inicial. Como los dos nuevos casos de uso siguen siendo nuevos métodos para los casos de uso ya existentes, se han añadido al diagrama de la misma forma que se añadieron los métodos anteriores.
+
+El primer **caso de uso** implementado sería *calcular el índice de masa corporal (IMB)*. Este se calcula mediante la fórmula: `IMB = weight / height^2`
+
+El segundo **caso de uso** implementado sería *calcular el requerimiento calórico* según unos parámetros introducidos. Para ello, será necesario introducir el peso actual, la actividad física de la persona (sedentaria, normal, deportista) y el objetivo (bajar de peso, mantenerse, subir de peso). Como su nombre indica, este caso de uso se basa en los parámetros obtenidos para devolver al usuario el requerimiento calórico diario (ej. 2000 calorías, 3500 calorías...)
+
+</details>
