@@ -8,7 +8,7 @@ Este proyecto consiste en desarrollar una calculadora que permita estimar varios
 - [Práctica 2: Casos de Uso](#práctica-2-casos-de-uso)
 
 
-## Práctica 1: Implementación y Tests {#seccion1}
+## Práctica 1: Implementación y Tests
 
 <details>
 <summary>Tests Ideal Weight</summary>
