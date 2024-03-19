@@ -122,7 +122,7 @@ En este caso, ese resultado final debería ser que el valor obtenido fuera igual
 ### Tests results
 
 <p align="center">
-    <img src="images/tests.png" height="325" title="tests">
+    <img src="tests.png" height="325" title="tests">
 </p>
 
 
@@ -136,7 +136,7 @@ Estos tests se han ejecutado de forma correcta, como se puede ver en la imagen.
 ## Uso de git y gitHub
 
 <p align="center">
-    <img src="images/gitk.png" height="250" title="gitk">
+    <img src="gitk.png" height="250" title="gitk">
 </p>
 
 Como último apartado de este proyecto de momento, es importante ver el uso de git a lo largo del tiempo.
@@ -154,7 +154,7 @@ Estos cambios se irán actualizando a medida que el proyecto vaya creciendo.
 ### Diagrama de Casos de Uso
 
 <p align="center">
-    <img src="doc/CasosDeUso-diagrActualizado.jpg" height="300" title="diagrama">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/b16a1360f72b168ae7ad693e6bb782f1bdfca63a/doc/CasosDeUso-diagrInicial.jpg" height="350" title="diagrama">
 </p>
 
 El primer paso en un proyecto de este estilo sería realizar un diagrama de casos de uso, elemento esencial en el desarrollo de un trabajo ya que da una idea inicial y general sobre cuales serán las funcionalidades y características del sistema a implementar, además de qué podrán y qué no podrán hacer los actores involucrados como podrían ser los usuarios.
@@ -172,7 +172,7 @@ En cuanto a las **funcionalidades/casos de uso**, hemos definido las dos ya impl
 ### Actualización Diagrama de Casos de Uso
 
 <p align="center">
-    <img src="doc/CasosDeUso-diagrActualizado.jpg" height="300" title="diagrama2">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/b16a1360f72b168ae7ad693e6bb782f1bdfca63a/doc/CasosDeUso-diagrActualizado.jpg" height="350" title="diagrama2">
 </p>
 
 Para este paso, se han implementado 2 nuevos casos de uso que no estaban contemplados en la calculadora inicial. Como los dos nuevos casos de uso siguen siendo nuevos métodos para los casos de uso ya existentes, se han añadido al diagrama de la misma forma que se añadieron los métodos anteriores.
