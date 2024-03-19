@@ -151,10 +151,10 @@ Estos cambios se irán actualizando a medida que el proyecto vaya creciendo.
 <details>
 <summary>Diagrama Inicial Casos de Uso</summary>
 
-## Diagrama de Casos de Uso
+### Diagrama de Casos de Uso
 
 <p align="center">
-    <img src="images/diagrama-CasosUso.jpg" height="300" title="diagrama">
+    <img src="doc/CasosDeUso-diagrActualizado.jpg" height="300" title="diagrama">
 </p>
 
 El primer paso en un proyecto de este estilo sería realizar un diagrama de casos de uso, elemento esencial en el desarrollo de un trabajo ya que da una idea inicial y general sobre cuales serán las funcionalidades y características del sistema a implementar, además de qué podrán y qué no podrán hacer los actores involucrados como podrían ser los usuarios.
@@ -169,8 +169,10 @@ En cuanto a las **funcionalidades/casos de uso**, hemos definido las dos ya impl
 <details>
 <summary>Actualización Diagrama Casos de Uso</summary>
 
+### Actualización Diagrama de Casos de Uso
+
 <p align="center">
-    <img src="images/diagrama2-CasosUso.jpg" height="300" title="diagrama2">
+    <img src="doc/CasosDeUso-diagrActualizado.jpg" height="300" title="diagrama2">
 </p>
 
 Para este paso, se han implementado 2 nuevos casos de uso que no estaban contemplados en la calculadora inicial. Como los dos nuevos casos de uso siguen siendo nuevos métodos para los casos de uso ya existentes, se han añadido al diagrama de la misma forma que se añadieron los métodos anteriores.
@@ -179,4 +181,32 @@ El primer **caso de uso** implementado sería *calcular el índice de masa corpo
 
 El segundo **caso de uso** implementado sería *calcular el requerimiento calórico* según unos parámetros introducidos. Para ello, será necesario introducir el peso actual, la actividad física de la persona (sedentaria, normal, deportista) y el objetivo (bajar de peso, mantenerse, subir de peso). Como su nombre indica, este caso de uso se basa en los parámetros obtenidos para devolver al usuario el requerimiento calórico diario (ej. 2000 calorías, 3500 calorías...)
 
+</details>
+
+<details>
+<summary>Especificación Caso de Uso</summary>
+
+### Especificación - idealWeight
+
+**Nombre:** Cálculo Ideal Weight
+**Actor principal:** Usuario
+**Stakeholder (Individuo: Participación):**
+    - Usuario: Realizar el cálculo de su peso ideal mediante la calculadora.
+    - Equipo de desarrollo software: Verificar y controlar el buen funcionamiento del sistema (calculadora)
+**Nivel de abstracción:** Nivel de usuario
+**Precondiciones:**
+    - El usuario puede ejecutar el programa de la calculadora con éxito
+**Garantía:**
+    - Mínima: Se devuelve información al usuario, principalmente mostrando el error que se ha cometido.
+    - Éxito: Se devuelve el peso ideal del usuario.
+**Trigger:** De entre las opciones, se selecciona la opción Calcular Ideal Weight.
+**Escenario principal:**
+    1. El usuario accede al sistema (calculadora) y selecciona la opción "Calcular Ideal Weight".
+    2. El sistema solicita al usuario los parámetros necesarios para esa acción (altura, género)
+    3. El usuario introduce los valores requeridos. 
+    4. El sistema aplica la fórmula con los parámetros introducidos. 
+    5. El sistema devuelve el resultado por pantalla.
+**Extensiones:**
+    3*. El usuario introduce parámetros no válidos (erróneos). Se muestra un mensaje de error específico para ese caso concreto.
+    4*. El resultado está fuera de un rango. Se muestra un mensaje de error específico para ese caso concreto. 
 </details>
