@@ -192,7 +192,7 @@ El segundo **caso de uso** implementado sería *calcular el requerimiento calór
 **Actor principal:** Usuario
 **Stakeholder (Individuo: Participación):**
     - Usuario: Realizar el cálculo de su peso ideal mediante la calculadora.
-    - Equipo de desarrollo software: Verificar y controlar el buen funcionamiento del sistema (calculadora)
+    - Desarrolladores: Verificar y controlar el buen funcionamiento del sistema (calculadora)
 **Nivel de abstracción:** Nivel de usuario
 **Precondiciones:**
     - El usuario puede ejecutar el programa de la calculadora con éxito

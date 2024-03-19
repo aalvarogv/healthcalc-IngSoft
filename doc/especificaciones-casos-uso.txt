@@ -1,0 +1,23 @@
+Especificaciones de casos de uso - cálculo ideal weight
+
+Nombre: Cálculo Ideal Weight
+Actor principal: Usuario
+Stakeholder (Individuo: Participación):
+    - Usuario: Realizar el cálculo de su peso ideal mediante la calculadora.
+    - Desarrolladores: Verificar y controlar el buen funcionamiento del sistema (calculadora)
+Nivel de abstracción:** Nivel de usuario
+Precondiciones:
+    - El usuario puede ejecutar el programa de la calculadora con éxito
+Garantía:
+    - Mínima: Se devuelve información al usuario, principalmente mostrando el error que se ha cometido.
+    - Éxito: Se devuelve el peso ideal del usuario.
+Trigger: De entre las opciones, se selecciona la opción Calcular Ideal Weight.
+Escenario principal:
+    1. El usuario accede al sistema (calculadora) y selecciona la opción "Calcular Ideal Weight".
+    2. El sistema solicita al usuario los parámetros necesarios para esa acción (altura, género)
+    3. El usuario introduce los valores requeridos. 
+    4. El sistema aplica la fórmula con los parámetros introducidos. 
+    5. El sistema devuelve el resultado por pantalla.
+Extensiones:
+    3*. El usuario introduce parámetros no válidos (erróneos). Se muestra un mensaje de error específico para ese caso concreto.
+    4*. El resultado está fuera de un rango. Se muestra un mensaje de error específico para ese caso concreto. 
