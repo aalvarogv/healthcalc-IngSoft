@@ -1,0 +1,40 @@
+USER-STORIES ->
+
+Cálculo Ideal Weight:
+'As a health calculator user
+I want to introduce my height and my gender values
+So that I can calculate my ideal weight'
+
+
+Cálculo Basal Metabolic Rate:
+'As a health calculator user
+I want to introduce my weight, my height, my age and my gender values
+So that I can calculate my Basal Metabolic Rate'
+
+-----------------------------------------------------
+
+ACCEPTANCE CRITERIA -> 
+
+	Cálculo ideal weight:
+
+Scenario: Correct values introduced
+'Given I am a health calculator user
+When I introduce my height and my gender values correctly
+Then the calculator will calculate my ideal weight'
+
+Scenario: Incorrect values introduced (height value under 0, not valid gender)
+'Given I am a health calculator user
+When I introduce my height and my gender values incorrectly
+Then the calculator will send me an error message'
+
+	Cálculo Basal Metabolic Rate:
+
+Scenario: Correct values introduced
+'Given I am a health calculator user
+When I introduce my weight, my height, my age and my gender values correctly
+Then the calculator will calculate my basal metabolic rate'
+
+Scenario: Incorrect values introduced (height, weight or age values under 0, not valid gender)
+'Given I am a health calculator user
+When I introduce my height and my gender values incorrectly
+Then the calculator will send me an error message'
