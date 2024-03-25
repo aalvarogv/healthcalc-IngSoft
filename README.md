@@ -122,7 +122,7 @@ En este caso, ese resultado final debería ser que el valor obtenido fuera igual
 ### Tests results
 
 <p align="center">
-    <img src="tests.png" height="325" title="tests">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/a8ac464071446698e956a27da134068de0cae2c5/tests.png" height="325" title="tests">
 </p>
 
 
@@ -136,7 +136,7 @@ Estos tests se han ejecutado de forma correcta, como se puede ver en la imagen.
 ## Uso de git y gitHub
 
 <p align="center">
-    <img src="gitk.png" height="250" title="gitk">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/a8ac464071446698e956a27da134068de0cae2c5/gitk.png" height="250" title="gitk">
 </p>
 
 Como último apartado de este proyecto de momento, es importante ver el uso de git a lo largo del tiempo.
