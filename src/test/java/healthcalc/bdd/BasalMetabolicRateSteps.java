@@ -34,7 +34,7 @@ public class BasalMetabolicRateSteps {
     }
 
     @When("I introduce my weight as {int}, my height as {int}, my age as {int} and gender as {char} values correctly")
-    public void i_introduce_my_weight_my_height_my_age_and_my_gender_values_correctly(int height, char gender) {
+    public void i_introduce_my_weight_my_height_my_age_and_my_gender_values_correctly(int weight, int height, char gender, int age) {
         this.weight = weight;
         this.height = height;
         this.gender = gender;
@@ -47,7 +47,7 @@ public class BasalMetabolicRateSteps {
     }
 
     @When("I introduce my weight as {int}, my height as {int}, my age as {int} and gender as {char} values incorrectly")
-    public void i_introduce_my_weight_my_height_my_age_and_my_gender_values_incorrectly(int height, char gender) {
+    public void i_introduce_my_weight_my_height_my_age_and_my_gender_values_incorrectly(int weight, int height, char gender, int age) {
         try {
             BasalMetabolicRate = calc.basalMetabolicRate(weight, height, gender, age);
         } catch (Exception e) {
