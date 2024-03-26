@@ -1,19 +1,12 @@
 package healthcalc.bdd;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.Assertions;
 
+import healthcalc.HealthCalcImpl;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-
-import org.junit.jupiter.api.Assertions;
-
-import healthcalc.HealthCalcImpl;
 
 public class IdealWeightSteps {
     private int height;
