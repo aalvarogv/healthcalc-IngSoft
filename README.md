@@ -134,7 +134,7 @@ Estos tests se han ejecutado de forma correcta, como se puede ver en la imagen.
 <details>
 <summary>Git</summary>
 
-## Uso de git y gitHub
+### Uso de git y gitHub
 
 <p align="center">
     <img src="gitk.png" height="250" title="gitk">
@@ -221,7 +221,7 @@ El segundo **caso de uso** implementado sería *calcular el requerimiento calór
 </details>
 
 
-## Práctica 3: BDD (Behaviour-Driven Development)
+## Práctica 3: BDD (Behaviour Driven Development)
 
 <details>
 <summary>Definiciones BDD</summary>
@@ -248,9 +248,13 @@ Usando el patrón given-when.then, la herramienta que más se usa es Cucumber, l
 <details>
 <summary>Estructura Implementada</summary>
 
+### .feature
+
 En la carpeta *src/test* encontramos 2 carpetas *java/healthcalc* y *resources/healthcalc*.
 
 En la carpeta *src/test/resources/healthcalc* encontramos 2 archivos **.feature**, 1 para cada método. Estos archivos contienen especificaciones de comportamiento escritas en lenguaje Gherkin. Son una forma efectiva de comunicar los requisitos del usuario y especificar el comportamiento de la aplicación en un formato legible, lo que facilita mucho la comunicación y la colaboración entre los miembros de un equipo.
+
+### Steps
 
 En la carpeta *src/test/java/healthcalc* encontramos a su vez otra nueva carpeta llamada *bdd*, la cual contiene 3 archivos.
 
