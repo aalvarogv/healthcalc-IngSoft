@@ -51,11 +51,11 @@ public class IdealWeightSteps {
     }
 
     @Then("The calculator will calculate my ideal weight as {float}")
-    public void the_calculator_will_calculate_my_ideal_weight(float expIdealWeight) {
-        Assertions.assertEquals(expIdealWeight, IdealWeight); 
+    public void the_calculator_will_calculate_my_ideal_weight(float ideal_weight) {
+        Assertions.assertEquals(ideal_weight, IdealWeight); 
     }
 
-    @Then("the calculator will send me an error message")
+    @Then("The calculator will send me an error message")
     public void the_calculator_will_send_me_an_error_message() {
         if (this.except_msg.contains("altura") || this.except_msg.contains("género")) {
             this.error_msg = true;

@@ -22,8 +22,8 @@ public class BasalMetabolicRateSteps {
         calc = new HealthCalcImpl();
     }
 
-    @When("I introduce my weight as {int}, my height as {int}, my age as {int} and my gender as {string} values correctly")
-    public void i_introduce_my_weight_my_height_my_age_and_my_gender_values_correctly(int weight, int height, String gender, int age) {
+    @When("I introduce my weight as {int}, my height as {int}, my gender as {string} and my age as {int} values correctly")
+    public void i_introduce_my_weight_my_height_my_gender_and_my_age_values_correctly(int weight, int height, String gender, int age) {
         this.weight = weight;
         this.height = height;
         char genderChar = gender.charAt(0);
@@ -37,8 +37,8 @@ public class BasalMetabolicRateSteps {
         }
     }
 
-    @When("I introduce my weight as {int}, my height as {int}, my age as {int} and my gender as {string} values incorrectly")
-    public void i_introduce_my_weight_my_height_my_age_and_my_gender_values_incorrectly(int weight, int height, String gender, int age) {
+    @When("I introduce my weight as {int}, my height as {int}, my gender as {string} and my age as {int} values incorrectly")
+    public void i_introduce_my_weight_my_height_my_gender_and_my_age_values_incorrectly(int weight, int height, String gender, int age) {
         this.weight = weight;
         this.height = height;
         char genderChar = gender.charAt(0);
@@ -60,12 +60,12 @@ public class BasalMetabolicRateSteps {
         } 
     }
 
-    @Then("the calculator will calculate my basal metabolic rate as {float}")
-    public void the_calculator_will_calculate_my_basal_metabolic_rate(float expBasalMetabolicRate) {
-        Assertions.assertEquals(expBasalMetabolicRate, BasalMetabolicRate); 
+    @Then("The calculator will calculate my basal metabolic rate as {float}")
+    public void the_calculator_will_calculate_my_basal_metabolic_rate(float basal_metabolic_rate) {
+        Assertions.assertEquals(basal_metabolic_rate, BasalMetabolicRate); 
     }
 
-    @Then("the calculator will send me another error message")
+    @Then("The calculator will send me another error message")
     public void the_calculator_will_send_me_another_error_message() {
         if (this.except_msg.contains("peso") ||
             this.except_msg.contains("altura") ||
