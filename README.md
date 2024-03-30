@@ -218,3 +218,42 @@ El segundo **caso de uso** implementado sería *calcular el requerimiento calór
     3*. El usuario introduce parámetros no válidos (erróneos). Se muestra un mensaje de error específico para ese caso concreto.
     4*. El resultado está fuera de un rango. Se muestra un mensaje de error específico para ese caso concreto. 
 </details>
+
+
+## Práctica 3: BDD (Behaviour-Driven Development)
+
+<details>
+<summary>Definiciones BDD</summary>
+
+### Historias de Usuario (User-Stories)
+
+Se usan para describir las características/funciones que un usuario desea que tenga una aplicación o proyecto. Se centran en los objetivos o necesidades, proporcionando una descripción de lo que se desea lograr.
+
+Para este proyecto, hemos especificado 2 historias de usuario, 1 para cada uno de los métodos iniciales de nuestra calculadora (idealweight y basalmetabolicrate). Para cada una de esas historias de usuario, se han implementado 2 criterios de aceptación (requisitos/condiciones que deben cumplirse para considerar una historia de usuario como completa y funcional).
+
+### As a-I want-So that
+
+Para desarrollar las historias de usuario, se usa la estructura **As a** - se especifica el tipo de usuario, **I want** - las necesidades que tiene, **So that** - las características para cumplir el objetivo.
+
+### Given-When-Then
+
+Para desarollar los criterios de aceptación, se usa la típica estructura **Given** - se especifican las precondiciones, **When** - las condiciones de las acciones que se van a ejecutar, **Then** - el resultado esperado.
+
+### Cucumber y Gherkin
+
+Usando el patrón given-when.then, la herramienta que más se usa es Cucumber, la cual se basa en el lenguaje Gherkin. Se utiliza en el contexto de la automatización de pruebas y el desarrollo ágil de software. Gherkin presenta el comportamiento de la aplicación/proyecto, a partir de la cual Cucumber puede generar los casos de prueba de la aplicación.
+</details>
+
+<details>
+<summary>Estructura Implementada</summary>
+
+En la carpeta *src/test* encontramos 2 carpetas *java/healthcalc* y *resources/healthcalc*.
+
+En la carpeta *src/test/resources/healthcalc* encontramos 2 archivos **.feature**, 1 para cada método. Estos archivos contienen especificaciones de comportamiento escritas en lenguaje Gherkin. Son una forma efectiva de comunicar los requisitos del usuario y especificar el comportamiento de la aplicación en un formato legible, lo que facilita mucho la comunicación y la colaboración entre los miembros de un equipo.
+
+En la carpeta *src/test/java/healthcalc* encontramos a su vez otra nueva carpeta llamada *bdd*, la cual contiene 3 archivos.
+
+El primer archivo, **RunCucumberTest.java**, es un archivo de entrada principal usado para ejecutar pruebas escritas con Cucumber. Contiene la configuración necesaria para iniciar la ejecución de las pruebas de Cucumber utilizando JUnit y ejecutar los archivos .feature definidos en el proyecto.
+
+Los otros 2 archivos, **IdealWeightSteps.java** y **BasalMetabolicRate.java**, contienen métodos que implementan la lógica de prueba para los pasos definidos en los archivos .feature usando Gherkin. Estos métodos son responsables de realizar acciones en la aplicación y verificar que el comportamiento sea como se describe.
+</details>
