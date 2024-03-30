@@ -6,6 +6,7 @@ Este proyecto consiste en desarrollar una calculadora que permita estimar varios
 
 - [Práctica 1: Implementación y Tests](#práctica-1-implementación-y-tests)
 - [Práctica 2: Casos de Uso](#práctica-2-casos-de-uso)
+- [Práctica 3: BDD (Behaviour-Driven Development)](#práctica-3-bdd-(behaviour-driven-development))
 
 
 ## Práctica 1: Implementación y Tests {#seccion1}
@@ -133,7 +134,7 @@ Estos tests se han ejecutado de forma correcta, como se puede ver en la imagen.
 <details>
 <summary>Git</summary>
 
-## Uso de git y gitHub
+### Uso de git y gitHub
 
 <p align="center">
     <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/a8ac464071446698e956a27da134068de0cae2c5/gitk.png" height="250" title="gitk">
@@ -247,9 +248,13 @@ Usando el patrón given-when.then, la herramienta que más se usa es Cucumber, l
 <details>
 <summary>Estructura Implementada</summary>
 
+### .feature
+
 En la carpeta *src/test* encontramos 2 carpetas *java/healthcalc* y *resources/healthcalc*.
 
 En la carpeta *src/test/resources/healthcalc* encontramos 2 archivos **.feature**, 1 para cada método. Estos archivos contienen especificaciones de comportamiento escritas en lenguaje Gherkin. Son una forma efectiva de comunicar los requisitos del usuario y especificar el comportamiento de la aplicación en un formato legible, lo que facilita mucho la comunicación y la colaboración entre los miembros de un equipo.
+
+### Steps
 
 En la carpeta *src/test/java/healthcalc* encontramos a su vez otra nueva carpeta llamada *bdd*, la cual contiene 3 archivos.
 
