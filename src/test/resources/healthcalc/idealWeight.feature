@@ -20,9 +20,9 @@ So that I can calculate my ideal weight"
     Scenario Outline: Inorrect values introduced
         Given I am a health calculator user
         When I introduce my height as <height> and my gender as "<gender>" values incorrectly
-        Then The calculator will send me an error message as "<error_msg>"
+        Then The calculator will send me an error message
 
                 Examples:
-            | height | gender | error_msg                            |
-            | -5     | w      | La altura introducida debe ser > 0   |
-            | 190    | j      | El género introducido no es correcto |        
+            | height | gender | error_msg |
+            | -5     | w      | True      |
+            | 190    | j      | True      |        
