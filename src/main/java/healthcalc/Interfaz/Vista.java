@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+import healthcalc.HealthCalcImpl;
 
 public class Vista {
 
@@ -69,7 +70,7 @@ public class Vista {
 
     // Botones
     
-    JButton bIdealWeight = new JButton("Ideal Weight");
+    bIdealWeight = new JButton("Ideal Weight");
     bIdealWeight.setPreferredSize(new Dimension(112, 31));
     
     constraints.gridx = 6;
@@ -78,7 +79,7 @@ public class Vista {
     constraints.gridheight = 4;
     panel.add(bIdealWeight, constraints);
     
-    JButton bBMR = new JButton("Basal Metabolic Rate");
+    bBMR = new JButton("Basal Metabolic Rate");
     bBMR.setPreferredSize(new Dimension(158, 30));
     
     constraints.gridx = 10;
@@ -89,7 +90,7 @@ public class Vista {
 
     // Checkbox
     
-    JCheckBox bMasc = new JCheckBox("Masculino");
+    bMasc = new JCheckBox("Masculino");
     bMasc.setPreferredSize(new Dimension(84, 16));
     bMasc.setSelected(false);
     constraints.gridx = 10;
@@ -98,7 +99,7 @@ public class Vista {
     constraints.gridheight = 3;
     panel.add(bMasc, constraints);
     
-    JCheckBox bFem = new JCheckBox("Femenino");
+    bFem = new JCheckBox("Femenino");
     bFem.setPreferredSize(new Dimension(84, 16));
     bFem.setSelected(false);
     constraints.gridx = 8;
@@ -153,7 +154,7 @@ public class Vista {
 
     // Texto
 
-    JTextField tEdad = new JTextField(15);
+    tEdad = new JTextField(15);
     tEdad.setPreferredSize(new Dimension(131, 23));
     constraints.gridx = 8;
     constraints.gridy = 8;
@@ -161,7 +162,7 @@ public class Vista {
     constraints.gridheight = 5;
     panel.add(tEdad, constraints);
     
-    JTextField tAltura = new JTextField(15);
+    tAltura = new JTextField(15);
     tAltura.setPreferredSize(new Dimension(131, 23));
     constraints.gridx = 8;
     constraints.gridy = 10;
@@ -169,7 +170,7 @@ public class Vista {
     constraints.gridheight = 5;
     panel.add(tAltura, constraints);
     
-    JTextField tPeso = new JTextField(15);
+    tPeso = new JTextField(15);
     tPeso.setPreferredSize(new Dimension(131, 23));
     constraints.gridx = 8;
     constraints.gridy = 12;
@@ -177,7 +178,7 @@ public class Vista {
     constraints.gridheight = 5;
     panel.add(tPeso, constraints);
     
-    JTextField tIdealWeight = new JTextField(15);
+    tIdealWeight = new JTextField(15);
     tIdealWeight.setPreferredSize(new Dimension(131, 23));
     constraints.gridx = 5;
     constraints.gridy = 18;
@@ -185,14 +186,18 @@ public class Vista {
     constraints.gridheight = 5;
     panel.add(tIdealWeight, constraints);
     
-    JTextField tBMR = new JTextField(15);
+    tBMR = new JTextField(15);
     tBMR.setPreferredSize(new Dimension(131, 23));
     constraints.gridx = 10;
     constraints.gridy = 18;
     constraints.gridwidth = 5;
     constraints.gridheight = 5;
     panel.add(tBMR, constraints);
+
+    // Crear un modelo
+    HealthCalcImpl modelo = new HealthCalcImpl();
     
+    control(new Controlador(modelo, this));
     frame.add(panel);
     frame.setVisible(true);
   }
