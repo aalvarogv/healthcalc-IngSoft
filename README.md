@@ -6,10 +6,11 @@ Este proyecto consiste en desarrollar una calculadora que permita estimar varios
 
 - [Práctica 1: Implementación y Tests](#práctica-1-implementación-y-tests)
 - [Práctica 2: Casos de Uso](#práctica-2-casos-de-uso)
-- [Práctica 3: BDD (Behaviour-Driven Development)](#práctica-3-bdd-(behaviour-driven-development))
+- [Práctica 3: BDD](#práctica-3-bdd)
+- [Práctica 4: Interfaz Gráfica](#práctica-4-interfaz-gráfica)
 
 
-## Práctica 1: Implementación y Tests {#seccion1}
+## Práctica 1: Implementación y Tests
 
 <details>
 <summary>Tests Ideal Weight</summary>
@@ -221,7 +222,7 @@ El segundo **caso de uso** implementado sería *calcular el requerimiento calór
 </details>
 
 
-## Práctica 3: BDD (Behaviour-Driven Development)
+## Práctica 3: BDD
 
 <details>
 <summary>Definiciones BDD</summary>
@@ -261,4 +262,33 @@ En la carpeta *src/test/java/healthcalc* encontramos a su vez otra nueva carpeta
 El primer archivo, **RunCucumberTest.java**, es un archivo de entrada principal usado para ejecutar pruebas escritas con Cucumber. Contiene la configuración necesaria para iniciar la ejecución de las pruebas de Cucumber utilizando JUnit y ejecutar los archivos .feature definidos en el proyecto.
 
 Los otros 2 archivos, **IdealWeightSteps.java** y **BasalMetabolicRate.java**, contienen métodos que implementan la lógica de prueba para los pasos definidos en los archivos .feature usando Gherkin. Estos métodos son responsables de realizar acciones en la aplicación y verificar que el comportamiento sea como se describe.
+</details>
+
+
+## Práctica 4: Interfaz Gráfica
+
+<details>
+<summary>Boceto Inicial</summary>
+
+### Prototipo/Mockup de la calculadora
+
+Se ha realizado un boceto de la interfaz gráfica mediante el software de diseño Balsamiq. Este boceto es útil para saber qué es obligatorio implementar a la hora de desarrollar la interfaz definitiva.
+
+En él, se han implementado unos checkbox para marcar el género del usuario y unos testbox para escribir los valores para los atributos edad, altura y peso. Además, hay dos botones que se usan para calcular el peso ideal y la tasa metabólica basal, valores que se muestran en los testbox de abajo.
+
+<p align="center">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/a45fb8e8da823e3c11b74fb376471b27962d0c19/doc/interfaz_boceto.png" height="350" title="boceto">
+</p>
+</details>
+
+<details>
+<summary>Interfaz definitiva</summary>
+
+### Interfaz gráfica definitiva
+
+Esta es la interfaz definitiva, desarrollada en visual studio code mediante la extensión *Window Builder*. Se ha seguido el patrón de diseño **Modelo-Vista-Controlador**. Para ello, primero se ha desarrollado la *Vista*, que serían los componentes de la interfaz gráfica, y después se ha desarrollado el *Controlador* que pone en comunicación la Vista con el *Modelo*, que ya teníamos implementado desde anteriores prácticas
+
+<p align="center">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/a45fb8e8da823e3c11b74fb376471b27962d0c19/doc/interfaz_definitivo.png" height="350" title="definitiva">
+</p>
 </details>
