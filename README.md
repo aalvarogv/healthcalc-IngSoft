@@ -277,7 +277,7 @@ Se ha realizado un boceto de la interfaz gráfica mediante el software de diseñ
 En él, se han implementado unos checkbox para marcar el género del usuario y unos testbox para escribir los valores para los atributos edad, altura y peso. Además, hay dos botones que se usan para calcular el peso ideal y la tasa metabólica basal, valores que se muestran en los testbox de abajo.
 
 <p align="center">
-    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/b16a1360f72b168ae7ad693e6bb782f1bdfca63a/doc/CasosDeUso-diagrActualizado.jpg" height="350" title="boceto">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/a45fb8e8da823e3c11b74fb376471b27962d0c19/doc/interfaz_boceto.png" height="350" title="boceto">
 </p>
 </details>
 
@@ -289,6 +289,6 @@ En él, se han implementado unos checkbox para marcar el género del usuario y u
 Esta es la interfaz definitiva, desarrollada en visual studio code mediante la extensión *Window Builder*. Se ha seguido el patrón de diseño **Modelo-Vista-Controlador**. Para ello, primero se ha desarrollado la *Vista*, que serían los componentes de la interfaz gráfica, y después se ha desarrollado el *Controlador* que pone en comunicación la Vista con el *Modelo*, que ya teníamos implementado desde anteriores prácticas
 
 <p align="center">
-    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/b16a1360f72b168ae7ad693e6bb782f1bdfca63a/doc/CasosDeUso-diagrActualizado.jpg" height="350" title="definitiva">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/a45fb8e8da823e3c11b74fb376471b27962d0c19/doc/interfaz_definitivo.png" height="350" title="definitiva">
 </p>
 </details>
