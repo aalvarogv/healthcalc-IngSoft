@@ -6,15 +6,15 @@ import healthcalc.HealthCalcImpl;
 
 public class Controlador implements ActionListener {
     
+    private HealthCalcImpl modelo = new HealthCalcImpl();
     private Vista vista;
     private char genero = '-';
 	private int edad = 0;
     private int altura = 0;
 	private float peso = 0;
-	private HealthCalcImpl calc = new HealthCalcImpl();
 	
-	public Controlador(HealthCalcImpl calc, Vista vista) {
-		this.calc = calc;
+	public Controlador(HealthCalcImpl modelo, Vista vista) {
+		this.modelo = modelo;
 		this.vista = vista;
 	}
 	
@@ -22,28 +22,24 @@ public class Controlador implements ActionListener {
 	public void actionPerformed(ActionEvent act) {
 		String comando = act.getActionCommand();
 
-        if (comando == "checkMasc") {
+        if (comando.equals("checkMasc")) {
             vista.getMascCheckBox().setSelected(true);
             vista.getFemCheckBox().setSelected(false);
-            //vista.getMascCheckBox().setBackground(new Color(244, 182, 194));
-			//vista.getFemCheckBox().setBackground(Color.WHITE);
-			genero = 'm';
+            genero = 'm';
         }
-        else if (comando == "checkFem"){
+        else if (comando.equals("checkFem")){
             vista.getMascCheckBox().setSelected(false);
             vista.getFemCheckBox().setSelected(true);
-            //vista.getFemCheckBox().setBackground(new Color(244, 182, 194));
-			//vista.getMascCheckBox().setBackground(Color.WHITE);
-		    genero = 'w';
+            genero = 'w';
         }
-        else if (comando == "getBMR"){
+        else if (comando.equals("getBMR")) {
             try {
                 edad = Integer.parseInt(vista.getEdad().getText());
                 altura = Integer.parseInt(vista.getAltura().getText());
                 peso = Float.parseFloat(vista.getPeso().getText());
                 
                 try {
-                    float BMR = this.calc.basalMetabolicRate(peso, altura, genero, edad);
+                    float BMR = this.modelo.basalMetabolicRate(peso, altura, genero, edad);
                     vista.setBMR(BMR);
                 } catch (Exception eBMR) {
                     vista.inputsError(eBMR.getMessage());
@@ -52,12 +48,12 @@ public class Controlador implements ActionListener {
                 vista.noInputsError();
             }
         }
-        else if (comando == "getIdealWeight") {
+        else if (comando.equals("getIdealWeight")) {
             try {
                 altura = Integer.parseInt(vista.getAltura().getText());
                 
                 try {
-                    float idealWeight = this.calc.idealWeight(altura, genero);
+                    float idealWeight = this.modelo.idealWeight(altura, genero);
                     vista.setIdealWeight(idealWeight);
                 } catch (Exception eIW) {
                     vista.inputsError(eIW.getMessage());
