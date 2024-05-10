@@ -195,7 +195,7 @@ public class Vista {
     panel.add(tBMR, constraints);
 
     // Crear un modelo
-    HealthCalcImpl modelo = new HealthCalcImpl();
+    HealthCalcImpl modelo = HealthCalcImpl.getInstancia();
     
     control(new Controlador(modelo, this));
     frame.add(panel);

@@ -6,7 +6,7 @@ import healthcalc.HealthCalcImpl;
 
 public class Controlador implements ActionListener {
     
-    private HealthCalcImpl modelo = new HealthCalcImpl();
+    private HealthCalcImpl modelo = HealthCalcImpl.getInstancia();
     private Vista vista;
     private char genero = '-';
 	private int edad = 0;

@@ -2,6 +2,18 @@ package healthcalc;
 
 public class HealthCalcImpl implements HealthCalc {
 
+    private static HealthCalcImpl instancia;
+
+    private HealthCalcImpl() {}
+
+    public static HealthCalcImpl getInstancia() {
+        if (instancia == null) {
+            instancia = new HealthCalcImpl();
+        }
+        return instancia;
+    }
+
+
     @Override
     public float idealWeight(int height, char gender) throws Exception {
         
