@@ -306,7 +306,7 @@ Para el primer apartado de esta práctica, se ha implementado para nuestro proye
 ### Diagrama de clases UML
 
 <p align="center">
-    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Singleton.png" height="350" title="boceto">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Singleton.png" height="350" title="singleton">
 </p>
 </details>
 
@@ -322,7 +322,7 @@ Para conseguir esto vamos a implementar el patrón Adapter, el cual proporciona 
 ### Diagrama de clases UML
 
 <p align="center">
-    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Adapter.png" height="350" title="definitiva">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Adapter.png" height="350" title="adapter">
 </p>
 </details>
 
@@ -338,12 +338,12 @@ Para ello, vamos a usar el patrón proxy o representante. Este patrón se encarg
 ### Diagrama de clases UML
 
 <p align="center">
-    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Proxy.png" height="350" title="definitiva">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Proxy.png" height="450" title="proxy">
 </p>
 </details>
 
 <details>
-<summary>Patrón</summary>
+<summary>Patrón Decorator</summary>
 
 ### Aplicación patrón Decorator
 
@@ -358,6 +358,6 @@ Además, para cada clase de tipo 'europea' y 'americana', se implementa un méto
 ### Diagrama de clases UML
 
 <p align="center">
-    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Decorator.png" height="350" title="definitiva">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Decorator.png" height="450" title="decorator">
 </p>
 </details>
