@@ -1,11 +1,11 @@
 package healthcalc;
 
-public class DecoratorEurope implements HealthHospital {
+public class DecoratorEurope extends Decorator {
 
-    private HealthStatsProxy calc;
+    public static String[] medidas = {"metros", "gramos"};
 
     public DecoratorEurope(HealthStatsProxy calc) {
-        this.calc = calc;
+       super(calc);
     }
 
     @Override
@@ -15,9 +15,10 @@ public class DecoratorEurope implements HealthHospital {
 
     @Override
     public double bmr(char genero, int edad, float altura, int peso) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'bmr'");
+        return calc.bmr(genero, edad, altura, peso);
     }
-    
 
+    public String[] medidas() {
+        return medidas;
+    }
 }

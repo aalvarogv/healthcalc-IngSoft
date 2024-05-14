@@ -1,27 +1,27 @@
 package healthcalc;
 
-public class DecoratorAmerica implements HealthHospital {
+public class DecoratorAmerica extends Decorator {
 
-    private HealthStatsProxy calc;
-    public static String[] medidas = new String[2];
+    public static String[] medidas = {"pies", "libras"};
 
     public DecoratorAmerica(HealthStatsProxy calc) {
-        this.calc = calc;
-        medidas[0] = "pies";
-        medidas[1] = "libras";
+        super(calc);
     }
 
     @Override
     public int pesoIdeal(char genero, float altura) {
-        return calc.pesoIdeal(genero, altura);
+        float alturaM = altura / 3.2808f;              // 1 metro = 3.2808 pies
+        return calc.pesoIdeal(genero, alturaM);
     }
 
     @Override
     public double bmr(char genero, int edad, float altura, int peso) {
-        return calc.bmr(genero, edad, altura, peso);
+        float alturaM = altura / 3.2808f;              // 1 metro = 3.2808 pies
+        int pesoG = (int) (peso * 1000 / 2.20462);     // 1 kg = 2.20462 libras
+        return calc.bmr(genero, edad, alturaM, pesoG);
     }
 
-    public String[] unidades() {
+    public String[] medidas() {
         return medidas;
     }
 }
