@@ -18,7 +18,16 @@ public class DecoratorAmerica extends Decorator {
     public double bmr(char genero, int edad, float altura, int peso) {
         float alturaM = altura / 3.2808f;              // 1 metro = 3.2808 pies
         int pesoG = (int) (peso * 1000 / 2.20462);     // 1 kg = 2.20462 libras
-        return calc.bmr(genero, edad, alturaM, pesoG);
+        double bmr = calc.bmr(genero, edad, alturaM, pesoG);
+        mensaje(alturaM, pesoG, bmr);
+        return bmr;
+    }
+
+    public void mensaje(float altura, int peso, double bmr) {
+        System.out.println("La persona con altura " +
+            altura + " " + medidas[0].toString() + " y " +
+            peso + " " + medidas[1].toString() + " tiene un BMR de " + 
+            Double.toString(bmr));
     }
 
     public String[] medidas() {

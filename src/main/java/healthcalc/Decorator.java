@@ -19,9 +19,18 @@ public class Decorator implements HealthHospital {
     public double bmr(char genero, int edad, float altura, int peso) {
         float alturaM = altura * 1000;          // 1 metro = 1000 cm
         int pesoG = peso / 1000;                // 1 kg = 1000 g
-        return calc.bmr(genero, edad, alturaM, pesoG);
+        double bmr = calc.bmr(genero, edad, alturaM, pesoG);
+        mensaje(alturaM, pesoG, bmr);
+        return bmr;
     }
     
+    public void mensaje(float altura, int peso, double bmr) {
+        System.out.println("La persona con altura " +
+            altura + " " + medidas[0].toString() + " y " +
+            peso + " " + medidas[1].toString() + " tiene un BMR de " + 
+            Double.toString(bmr));
+    }
+
     public String[] medidas() {
         return medidas;
     }
