@@ -8,6 +8,7 @@ Este proyecto consiste en desarrollar una calculadora que permita estimar varios
 - [Práctica 2: Casos de Uso](#práctica-2-casos-de-uso)
 - [Práctica 3: BDD](#práctica-3-bdd)
 - [Práctica 4: Interfaz Gráfica](#práctica-4-interfaz-gráfica)
+- [Práctica 6: Patrones de diseño](#práctica-6-patrones-de-diseño)
 
 
 ## Práctica 1: Implementación y Tests
@@ -290,5 +291,73 @@ Esta es la interfaz definitiva, desarrollada en visual studio code mediante la e
 
 <p align="center">
     <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/a45fb8e8da823e3c11b74fb376471b27962d0c19/doc/interfaz_definitivo.png" height="350" title="definitiva">
+</p>
+</details>
+
+## Práctica 6: Patrones de diseño
+
+<details>
+<summary>Patrón Singleton</summary>
+
+### Aplicación patrón Singleton
+
+Para el primer apartado de esta práctica, se ha implementado para nuestro proyecto el patrón de diseño **Singleton**. Este patrón permite asegurarse de que una clase tenga una sola instancia, al tiempo que proporciona un punto de acceso global a esta instancia.
+
+### Diagrama de clases UML
+
+<p align="center">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Singleton.png" height="350" title="boceto">
+</p>
+</details>
+
+<details>
+<summary>Patrón Adapter</summary>
+
+### Aplicación patrón Adapter
+
+En el hospital Costa del Sol de Marbella se han interesado por nuestra calculadora de salud y la quieren integrar en su sistema informático. Para ello, tenemos la interfaz **HealthHospital**, con los métodos *bmr(char genero, int edad, float altura, int peso)* y *pesoIdeal(char genero, float altura)*. El objetivo es implementar un patrón para reutilizar la calculadora ya implementada sin tener que volver a implementar los métodos.
+
+Para conseguir esto vamos a implementar el patrón Adapter, el cual proporciona una interfaz unificada que permite a las calculadoras con interfaz incompatible colaborar.
+
+### Diagrama de clases UML
+
+<p align="center">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Adapter.png" height="350" title="definitiva">
+</p>
+</details>
+
+<details>
+<summary>Patrón Proxy</summary>
+
+### Aplicación patrón Proxy
+
+Es necesario realizar un registro de las veces que se utiliza la calculadora, almacenando los datos de los pacientes y permitiendo obtener la media de los valores introducidos y calculados por la calculadora. Para ello, tenemos la interfaz **HealthStats** con los métodos *alturaMedia()*, *pesoMedio()*, *edadMedia()*, *bmrMedio()*, *numSexoH()*, *numSexoM()*, *numTotalPacientes()*.
+
+Para ello, vamos a usar el patrón proxy o representante. Este patrón se encarga de proporcionar un sustituto o representante para otro objeto. Controla el acceso al objeto original, lo que le permite realizar algo antes o después de que la solicitud llegue al objeto original.
+
+### Diagrama de clases UML
+
+<p align="center">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Proxy.png" height="350" title="definitiva">
+</p>
+</details>
+
+<details>
+<summary>Patrón</summary>
+
+### Aplicación patrón Decorator
+
+El último objetivo es el de disponer de 2 versiones de la calculadora: una versión europea (altura en metros y peso en gramos) y otra americana (altura en pies y peso en libras). 
+
+Para lograr esto, se va a implementar el patrón Decorator. Este permite añadir nuevos comportamientos a los objetos colocando estos objetos dentro de objetos envolventes especiales que contienen los comportamientos.
+
+En nuestro caso, vamos a envolver la calculadora en 2 objetos (versión europea y versión americana) a los que se les va a dar el comportamiento deseado.
+
+Además, para cada clase de tipo 'europea' y 'americana', se implementa un método mensaje() que imprime por pantalla el cálculo del BMR y las medidas usadas según el modelo escogido.
+
+### Diagrama de clases UML
+
+<p align="center">
+    <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Decorator.png" height="350" title="definitiva">
 </p>
 </details>
