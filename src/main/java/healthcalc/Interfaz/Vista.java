@@ -255,11 +255,11 @@ public class Vista {
 	}	
 
   // Mostrar resultados
-  public void setIdealWeight(float txt) {
+  public void setIdealWeight(double txt) {
     tIdealWeight.setText(String.valueOf(txt));
   }
 
-  public void setBMR(float txt) {
+  public void setBMR(double txt) {
     tBMR.setText(String.valueOf(txt));
   }
 

@@ -35,7 +35,7 @@ La refactorización incluye la creación del tipo enumerado y la actualización 
 2. Agrupar los atributos 'height', 'weight', 'age' y 'gender' en una clase Person
 
 - bad smell -
-El problema que trata este refactoring podría ser principalmente Data Clumps-
+El problema que trata este refactoring podría ser principalmente Data Clumps.
 Este problema consiste en que los mismos grupos de datos que tienden a estar juntos en varias partes del código, deberían estar encapsulados en una clase separada.
 
 - refactorings aplicados -
@@ -61,3 +61,32 @@ Este cambio mejora la cláridad del código, además de su organización. Facili
     - Controlador : float height, float weight, int age, Gender gender -> new Usuario(height, weight, age, gender) | 2 lineas
     - HealthHospitalAdapter: float height, float weight, int age, Gender gender -> new Usuario(height, weight, age, gender) | 2 lineas
     - HealthTest: float height, float weight, int age, Gender gender -> new Usuario(height, weight, age, gender) | 20 lineas
+
+
+3. Crear las interfaces CardiovascularMetrics y MetabolicMetrics
+
+- bad smell -
+El problema que trata este refactoring podría ser principalmente Large Class (Clase Dios).
+Este problema consiste en que una clase tiene demasiadas responsabilidades, manejando ambos métodos.
+
+- refactorings aplicados -
+El refactoring que se ha aplicado ha sido Extract Class.
+Este crea nuevas clases para encapsular responsabilidades específicas y mueve estos metodos a sus respectivas nuevas clases.
+
+- tipo/categoría del refactoring -
+Este refactoring es de tipo Class Refactoring.
+Consiste en una reestructuración y un cambio de las funcionalidades de ciertos atributos mediante las clases.
+
+- descripción -
+Se han creado dos nuevas clases, CardiovascularMetrics y MetabolicMetrics, para manejar los cálculos del peso ideal y la tasa metabólica basal, respectivamente.
+Esto mejora la cohesión y reduce las responsabilidades de la clase que contenía estos dos métodos.
+
+- registro de cambios manuales -
+    - Creación de la interfaz CardiovascularMetrics | 3 líneas
+    - Creación de la interfaz MetabolicMetrics | 3 líneas
+    - HealthCalcImpl: implements HealthCalc -> implements CardiovascularMetrics, MetabolicMetrics() | 1 línea
+    - HealthCalcImpl: float idealWeight() -> double getIdealBodyWeight(), float basalMetabolicRate() -> double basalMetabolicRate() | 2 líneas
+    - HealthHospitalAdapter: float idealWeight() -> double getIdealBodyWeight(), float basalMetabolicRate() -> double basalMetabolicRate() | 2 líneas
+    - Controlador: float idealWeight() -> double getIdealBodyWeight(), float basalMetabolicRate() -> double basalMetabolicRate() | 2 líneas
+    - Vista: setIdealWeight(float), setBMR(float) -> setIdealWeight(double), setBMR(double) | 2 líneas
+    - HealthCalc: interfaz eliminada (sin función aparente)

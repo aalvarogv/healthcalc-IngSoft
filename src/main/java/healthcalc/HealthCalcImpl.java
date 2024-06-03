@@ -1,6 +1,6 @@
 package healthcalc;
 
-public class HealthCalcImpl implements HealthCalc {
+public class HealthCalcImpl implements CardiovascularMetrics, MetabolicMetrics {
 
     private static HealthCalcImpl instancia;
 
@@ -15,7 +15,7 @@ public class HealthCalcImpl implements HealthCalc {
 
 
     @Override
-    public float idealWeight(Person user) throws Exception {
+    public double getIdealBodyWeight(Person user) throws Exception {
 
         float height = user.height();
         Gender gender = user.gender();
@@ -40,7 +40,7 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public float basalMetabolicRate(Person user) throws Exception {
+    public double basalMetabolicRate(Person user) throws Exception {
 
         float height = user.height();
         float weight = user.weight();
