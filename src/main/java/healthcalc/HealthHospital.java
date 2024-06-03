@@ -11,7 +11,7 @@ public interface HealthHospital {
 	 * @param altura	Height of the person (m).
 	 * @return 		 	The ideal weight of the person (g).
 	 */
-	public int pesoIdeal(char genero, float altura);
+	public int pesoIdeal(Gender genero, float altura);
 	
 	/**
      * @param genero	Gender of the person ('m' or 'w').
@@ -20,5 +20,5 @@ public interface HealthHospital {
 	 * @param peso		Weight of the person (g).
 	 * @return	  		The Basal Metabolic Rate of the person.
 	 */
-	public double bmr(char genero, int edad, float altura, int peso);
+	public double bmr(Gender genero, int edad, float altura, int peso);
 }

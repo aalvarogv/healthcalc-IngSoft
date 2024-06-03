@@ -2,13 +2,15 @@ package healthcalc.Interfaz;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import healthcalc.Gender;
 import healthcalc.HealthCalcImpl;
 
 public class Controlador implements ActionListener {
     
     private HealthCalcImpl modelo = HealthCalcImpl.getInstancia();
     private Vista vista;
-    private char genero = '-';
+    private Gender genero;
 	private int edad = 0;
     private int altura = 0;
 	private float peso = 0;
@@ -25,12 +27,12 @@ public class Controlador implements ActionListener {
         if (comando.equals("checkMasc")) {
             vista.getMascCheckBox().setSelected(true);
             vista.getFemCheckBox().setSelected(false);
-            genero = 'm';
+            genero = Gender.MALE;
         }
         else if (comando.equals("checkFem")){
             vista.getMascCheckBox().setSelected(false);
             vista.getFemCheckBox().setSelected(true);
-            genero = 'w';
+            genero = Gender.FEMALE;
         }
         else if (comando.equals("getBMR")) {
             try {

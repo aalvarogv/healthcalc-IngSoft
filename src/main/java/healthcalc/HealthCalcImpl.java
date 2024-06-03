@@ -15,32 +15,31 @@ public class HealthCalcImpl implements HealthCalc {
 
 
     @Override
-    public float idealWeight(int height, char gender) throws Exception {
+    public float idealWeight(int height, Gender gender) throws Exception {
         
         // Altura introducida incorrecta (menor o igual a 0)
         if (height <= 0) {
             throw new IllegalArgumentException("La altura introducida debe ser > 0.");
         }
 
-        Character genre = Character.toUpperCase(gender);
         // Género introducido incorrecto
-        if (genre != 'M' && genre != 'W') {
-            throw new IllegalArgumentException("El género introducido no es correcto. Debe ser 'M' (hombre) o 'W' (mujer)");
+        if (!gender.equals(Gender.MALE) && !gender.equals(Gender.FEMALE)){
+            throw new IllegalArgumentException("El género introducido no es correcto.");
         
         } else {
             // Altura introducida incorrecta (hombre)
-            if (genre == 'M' && height > 250) {
+            if (gender.equals(Gender.MALE) && height > 250) {
                 throw new IllegalArgumentException("La altura introducida es incorrecta para un hombre.");
             }
 
             // Altura introducida incorrecta (mujer)
-            if (genre == 'W' && height > 230) {
+            if (gender.equals(Gender.FEMALE) && height > 230) {
                 throw new IllegalArgumentException("La altura introducida es incorrecta para una mujer.");
             }
         }
 
         // Cálculo de peso ideal
-        if (genre == 'M') {
+        if (gender.equals(Gender.MALE)) {
             float IW = height - 100 - (height - 150) / 4;
 
             // Peso ideal erróneo (hombre)
@@ -59,7 +58,7 @@ public class HealthCalcImpl implements HealthCalc {
     }
 
     @Override
-    public float basalMetabolicRate(float weight, int height, char gender, int age) throws Exception {
+    public float basalMetabolicRate(float weight, int height, Gender gender, int age) throws Exception {
 
         // Altura introducida incorrecta (menor o igual a 0)
         if (height <= 0) {
@@ -76,25 +75,24 @@ public class HealthCalcImpl implements HealthCalc {
             throw new IllegalArgumentException("La edad introducida debe estar entre 0 y 140.");
         }
 
-        Character genre = Character.toUpperCase(gender);
         // Género introducido incorrecto
-        if (genre != 'M' && genre != 'W') {
-            throw new IllegalArgumentException("El género introducido no es correcto. Debe ser 'M' (hombre) o 'W' (mujer)");
+        if (!gender.equals(Gender.MALE) && !gender.equals(Gender.FEMALE)){
+            throw new IllegalArgumentException("El género introducido no es correcto.");
         
         } else {
             // Altura introducida incorrecta (hombre)
-            if (genre == 'M' && height > 250) {
+            if (gender.equals(Gender.MALE) && height > 250) {
                 throw new IllegalArgumentException("La altura introducida es incorrecta para un hombre.");
             }
 
             // Altura introducida incorrecta (mujer)
-            if (genre == 'W' && height > 230) {
+            if (gender.equals(Gender.FEMALE) && height > 230) {
                 throw new IllegalArgumentException("La altura introducida es incorrecta para una mujer.");
             }
         }
 
         // Cálculo de tasa metabólica basal
-        if (genre == 'M') {
+        if (gender.equals(Gender.MALE)) {
             float BMR = 10 * weight + 6.25f * height - 5 * age + 5;
 
             // Tasa Metabólica Basal errónea (hombre)

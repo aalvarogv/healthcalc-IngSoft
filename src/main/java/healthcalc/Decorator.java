@@ -10,13 +10,13 @@ public class Decorator implements HealthHospital {
     }
 
     @Override
-    public int pesoIdeal(char genero, float altura) {
+    public int pesoIdeal(Gender genero, float altura) {
         float alturaM = altura * 1000;          // 1 metro = 1000 cm
         return calc.pesoIdeal(genero, alturaM);
     }
 
     @Override
-    public double bmr(char genero, int edad, float altura, int peso) {
+    public double bmr(Gender genero, int edad, float altura, int peso) {
         float alturaM = altura * 1000;          // 1 metro = 1000 cm
         int pesoG = peso / 1000;                // 1 kg = 1000 g
         double bmr = calc.bmr(genero, edad, alturaM, pesoG);

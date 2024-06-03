@@ -9,7 +9,7 @@ public class HealthHospitalAdapter  implements HealthHospital {
     }
 
     @Override
-    public int pesoIdeal(char genero, float altura) {
+    public int pesoIdeal(Gender genero, float altura) {
        
         float alturacm = altura * 100;
 
@@ -25,7 +25,7 @@ public class HealthHospitalAdapter  implements HealthHospital {
     }
 
     @Override
-    public double bmr(char genero, int edad, float altura, int peso) {
+    public double bmr(Gender genero, int edad, float altura, int peso) {
 
         float alturacm = altura * 100;
         float pesokg = peso / 1000;

@@ -9,13 +9,13 @@ public class DecoratorAmerica extends Decorator {
     }
 
     @Override
-    public int pesoIdeal(char genero, float altura) {
+    public int pesoIdeal(Gender genero, float altura) {
         float alturaM = altura / 3.2808f;              // 1 metro = 3.2808 pies
         return calc.pesoIdeal(genero, alturaM);
     }
 
     @Override
-    public double bmr(char genero, int edad, float altura, int peso) {
+    public double bmr(Gender genero, int edad, float altura, int peso) {
         float alturaM = altura / 3.2808f;              // 1 metro = 3.2808 pies
         int pesoG = (int) (peso * 1000 / 2.20462);     // 1 kg = 2.20462 libras
         double bmr = calc.bmr(genero, edad, alturaM, pesoG);

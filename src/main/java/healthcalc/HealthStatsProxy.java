@@ -27,20 +27,20 @@ public class HealthStatsProxy  implements HealthHospital, HealthStats {
     }
 
     @Override   // Método pesoIdeal() de la interfaz HealthHospital
-    public int pesoIdeal(char genero, float altura) {
+    public int pesoIdeal(Gender genero, float altura) {
        
-        if (genero == 'M') {numHIW++;}
-        else if (genero == 'W') {numMIW++;}
+        if (genero.equals(Gender.MALE)) {numHIW++;}
+        else if (genero.equals(Gender.FEMALE)) {numMIW++;}
         alturaMediaIW += altura;
 
         return calc.pesoIdeal(genero, altura);
     }
 
     @Override   // Método bmr() de la interfaz HealthHospital
-    public double bmr(char genero, int edad, float altura, int peso) {
+    public double bmr(Gender genero, int edad, float altura, int peso) {
 
-        if (genero == 'M') {numHIW++;}
-        else if (genero == 'W') {numMIW++;}
+        if (genero.equals(Gender.MALE)) {numHIW++;}
+        else if (genero.equals(Gender.FEMALE)) {numMIW++;}
         edadMedia += edad;
         alturaMediaBMR += altura;
         pesoMedio += peso;
