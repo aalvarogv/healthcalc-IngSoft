@@ -9,6 +9,7 @@ Este proyecto consiste en desarrollar una calculadora que permita estimar varios
 - [Práctica 3: BDD](#práctica-3-bdd)
 - [Práctica 4: Interfaz Gráfica](#práctica-4-interfaz-gráfica)
 - [Práctica 6: Patrones de diseño](#práctica-6-patrones-de-diseño)
+- [Práctica 7: Refactorings](#práctica-7-refactorings)
 
 
 ## Práctica 1: Implementación y Tests
@@ -360,4 +361,108 @@ Además, para cada clase de tipo 'europea' y 'americana', se implementa un méto
 <p align="center">
     <img src="https://github.com/aalvarogv/healthcalc-IngSoft/blob/2f38892659e2795864c896e34a458bae6979dbe3/doc/Decorator.png" height="450" title="decorator">
 </p>
+</details>
+
+
+## Práctica 7: Refactorings
+
+<details>
+<summary>Enumerador Gender</summary>
+
+### Cambiar el tipo de la variable género de 'char' a 'enum'
+
+- bad smell
+El problema que trata este refactoring podría ser principalmente Primitive Obsession.
+Este problema comenta el uso excesivo de tipos primitivos en ciertas variables, en lugar de tipos específicos más adecuados.
+
+- refactorings aplicados
+Podemos decir que se han aplicado principalmente 2 refactorings..
+El primero sería Introduce Enum; introducción de un enumerado para representar valores específicos.
+El segundo sería Replace Value with Object; reemplazo del valor de datos primitivos con un objeto que represente mejor el concepto.
+
+- tipo/categoría del refactoring
+Este campo es más fácil, ya que se trata claramente de un Attribute Refactoring.
+Este tipo transforma un tipo de datos de caracter primitivo a uno más específico.
+
+- descripción
+Se ha reemplazado la variable de tipo 'char' que representaba el género del usuario con un tipo 'enum'.
+Esto mejor la legibilidad del código y reduce errores potenciales al restringir los valores posibles a un conjunto definido (MALE, FEMALE).
+La refactorización incluye la creación del tipo enumerado y la actualización de las partes del código que usaban la variable de tipo 'char' para utilizar el nuevo 'enum'.
+
+- registro de cambios manuales
+    - Creación del enumerado Gender | 4 lineas
+    - HealthCalc: char gender -> Gender gender | 2 lineas
+    - HealthCalcImpl: gender == 'm' -> gender.equals(Gender.MALE) | 4 lineas
+    - HealthCalcImpl: gender == 'f' -> gender.equals(Gender.FEMALE) | 4 lineas
+    - Controlador: gender = 'm' -> gender = Gender.MALE | 1 linea
+    - Controlador: gender = 'w' -> gender = Gender.FEMALE | 1 linea
+    - Tests: gender = 'm' -> gender = Gender.MALE | 8 lineas
+    - Tests: gender = 'w' -> gender = Gender.FEMALE | 11 lineas
+    - Tests: gender = 'x' -> gender = null | 2 lineas
+</details>
+
+<details>
+<summary>Interfaz Person</summary>
+
+### Agrupar los atributos 'height', 'weight', 'age' y 'gender' en una clase Person
+
+- bad smell -
+El problema que trata este refactoring podría ser principalmente Data Clumps.
+Este problema consiste en que los mismos grupos de datos que tienden a estar juntos en varias partes del código, deberían estar encapsulados en una clase separada.
+
+- refactorings aplicados -
+Podemos decir que se han aplicado principalmente 2 refactorings.
+El primero sería Move Field; mover los campos 'height', 'weight', 'age' y 'gender', de las clases a la nueva clase Person.
+El segundo sería Encapsulate Field; encapsular los campos mencionados en la nueva clase Person con métodos de acceso.
+
+- tipo/categoría del refactoring -
+Este refactoring es de tipo Class Refactoring.
+Consiste en una reestructuración y un cambio de las funcionalidades de ciertos atributos mediante las clases.
+
+- descripción -
+Se ha creado una clase nueva Person que agrupa los atributos 'height', 'weight', 'age' y 'gender'.
+La refactorización incluye la modificación de ciertas clases para utilizar la instancia de Person en lugar de manejar esos campos de manera individual.
+Este cambio mejora la cláridad del código, además de su organización. Facilita la reutilización de campos y la gestión de datos relacionados con el usuario.
+
+- registro de cambios manuales -
+    - Creación de la interfaz Person | 6 lineas
+    - Usuario: atributos, constructor y métodos | 47 lineas
+    - HealthCalc: float height, float weight, int age, Gender gender -> Persona user | 2 lineas
+    - HealthCalcImpl: eliminación lanzamiento de errores | 46 lineas
+    - HealthCalcImpl: float height, float weight, int age, Gender gender -> Persona user | 8 lineas
+    - Controlador : float height, float weight, int age, Gender gender -> new Usuario(height, weight, age, gender) | 2 lineas
+    - HealthHospitalAdapter: float height, float weight, int age, Gender gender -> new Usuario(height, weight, age, gender) | 2 lineas
+    - HealthTest: float height, float weight, int age, Gender gender -> new Usuario(height, weight, age, gender) | 20 lineas
+</details>
+
+<details>
+<summary>Interfaces CardiovascularMetrics, MetabolicMetrics</summary>
+
+### Crear las interfaces CardiovascularMetrics y MetabolicMetrics
+
+- bad smell -
+El problema que trata este refactoring podría ser principalmente Large Class (Clase Dios).
+Este problema consiste en que una clase tiene demasiadas responsabilidades, manejando ambos métodos.
+
+- refactorings aplicados -
+El refactoring que se ha aplicado ha sido Extract Class.
+Este crea nuevas clases para encapsular responsabilidades específicas y mueve estos metodos a sus respectivas nuevas clases.
+
+- tipo/categoría del refactoring -
+Este refactoring es de tipo Class Refactoring.
+Consiste en una reestructuración y un cambio de las funcionalidades de ciertos atributos mediante las clases.
+
+- descripción -
+Se han creado dos nuevas clases, CardiovascularMetrics y MetabolicMetrics, para manejar los cálculos del peso ideal y la tasa metabólica basal, respectivamente.
+Esto mejora la cohesión y reduce las responsabilidades de la clase que contenía estos dos métodos.
+
+- registro de cambios manuales -
+    - Creación de la interfaz CardiovascularMetrics | 3 líneas
+    - Creación de la interfaz MetabolicMetrics | 3 líneas
+    - HealthCalcImpl: implements HealthCalc -> implements CardiovascularMetrics, MetabolicMetrics() | 1 línea
+    - HealthCalcImpl: float idealWeight() -> double getIdealBodyWeight(), float basalMetabolicRate() -> double basalMetabolicRate() | 2 líneas
+    - HealthHospitalAdapter: float idealWeight() -> double getIdealBodyWeight(), float basalMetabolicRate() -> double basalMetabolicRate() | 2 líneas
+    - Controlador: float idealWeight() -> double getIdealBodyWeight(), float basalMetabolicRate() -> double basalMetabolicRate() | 2 líneas
+    - Vista: setIdealWeight(float), setBMR(float) -> setIdealWeight(double), setBMR(double) | 2 líneas
+    - HealthCalc: interfaz eliminada (sin función aparente)
 </details>
