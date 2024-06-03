@@ -372,25 +372,25 @@ Además, para cada clase de tipo 'europea' y 'americana', se implementa un méto
 
 ### Cambiar el tipo de la variable género de 'char' a 'enum'
 
-- bad smell
+- bad smell -
 El problema que trata este refactoring podría ser principalmente Primitive Obsession.
 Este problema comenta el uso excesivo de tipos primitivos en ciertas variables, en lugar de tipos específicos más adecuados.
 
-- refactorings aplicados
+- refactorings aplicados -
 Podemos decir que se han aplicado principalmente 2 refactorings..
 El primero sería Introduce Enum; introducción de un enumerado para representar valores específicos.
 El segundo sería Replace Value with Object; reemplazo del valor de datos primitivos con un objeto que represente mejor el concepto.
 
-- tipo/categoría del refactoring
+- tipo/categoría del refactoring -
 Este campo es más fácil, ya que se trata claramente de un Attribute Refactoring.
 Este tipo transforma un tipo de datos de caracter primitivo a uno más específico.
 
-- descripción
+- descripción -
 Se ha reemplazado la variable de tipo 'char' que representaba el género del usuario con un tipo 'enum'.
 Esto mejor la legibilidad del código y reduce errores potenciales al restringir los valores posibles a un conjunto definido (MALE, FEMALE).
 La refactorización incluye la creación del tipo enumerado y la actualización de las partes del código que usaban la variable de tipo 'char' para utilizar el nuevo 'enum'.
 
-- registro de cambios manuales
+- registro de cambios manuales -
     - Creación del enumerado Gender | 4 lineas
     - HealthCalc: char gender -> Gender gender | 2 lineas
     - HealthCalcImpl: gender == 'm' -> gender.equals(Gender.MALE) | 4 lineas
