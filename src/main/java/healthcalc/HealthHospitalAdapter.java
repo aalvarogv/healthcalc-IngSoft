@@ -14,7 +14,7 @@ public class HealthHospitalAdapter  implements HealthHospital {
         float alturacm = altura * 100;
 
         try {
-            float pesoIdeal = calc.idealWeight((int) alturacm, genero);
+            float pesoIdeal = calc.idealWeight(new Usuario((int) alturacm, 1, 1, genero));
             return (int) pesoIdeal;
 
         } catch (Exception e) {
@@ -31,7 +31,7 @@ public class HealthHospitalAdapter  implements HealthHospital {
         float pesokg = peso / 1000;
         
         try {
-            float bmr = calc.basalMetabolicRate(pesokg, (int) alturacm, genero, edad);
+            float bmr = calc.basalMetabolicRate(new Usuario((int) alturacm, pesokg, edad, genero));
             return (double) bmr;
 
         } catch (Exception e) {

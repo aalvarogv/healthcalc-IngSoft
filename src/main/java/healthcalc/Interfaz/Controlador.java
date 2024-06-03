@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 
 import healthcalc.Gender;
 import healthcalc.HealthCalcImpl;
+import healthcalc.Usuario;
 
 public class Controlador implements ActionListener {
     
@@ -39,9 +40,9 @@ public class Controlador implements ActionListener {
                 edad = Integer.parseInt(vista.getEdad().getText());
                 altura = Integer.parseInt(vista.getAltura().getText());
                 peso = Float.parseFloat(vista.getPeso().getText());
-                
+
                 try {
-                    float BMR = this.modelo.basalMetabolicRate(peso, altura, genero, edad);
+                    float BMR = this.modelo.basalMetabolicRate(new Usuario(peso, edad, altura, genero));
                     vista.setBMR(BMR);
                 } catch (Exception eBMR) {
                     vista.inputsError(eBMR.getMessage());
@@ -55,7 +56,7 @@ public class Controlador implements ActionListener {
                 altura = Integer.parseInt(vista.getAltura().getText());
                 
                 try {
-                    float idealWeight = this.modelo.idealWeight(altura, genero);
+                    float idealWeight = this.modelo.idealWeight(new Usuario(1, 1, altura, genero));
                     vista.setIdealWeight(idealWeight);
                 } catch (Exception eIW) {
                     vista.inputsError(eIW.getMessage());

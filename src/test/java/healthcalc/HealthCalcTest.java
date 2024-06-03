@@ -17,7 +17,7 @@ public class HealthCalcTest {
     @DisplayName("Test altura igual a cero (idealWeight)")
     public void testAlturaCeroIdealWeight() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.idealWeight(0, Gender.FEMALE), 
+            new Usuario(0, 1, 1, Gender.FEMALE),
 		    "La altura introducida debe ser > 0."
         );
     }
@@ -26,7 +26,7 @@ public class HealthCalcTest {
     @DisplayName("Test altura negativa (idealWeight)")
     public void testAlturaNegativaIdealWeight() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.idealWeight(-4, Gender.FEMALE), 
+            new Usuario(-4, 1, 1, Gender.FEMALE),
 		    "La altura introducida debe ser > 0."
         );
     }
@@ -35,7 +35,7 @@ public class HealthCalcTest {
     @DisplayName("Test altura incorrecta hombre (idealWeight)")
     public void testAlturaIncorrectaMIdealWeight() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.idealWeight(257, Gender.MALE), 
+            new Usuario(257, 1, 1, Gender.MALE),
 		    "La altura introducida es incorrecta para un hombre."
         );
     }
@@ -44,7 +44,7 @@ public class HealthCalcTest {
     @DisplayName("Test altura incorrecta mujer (idealWeight)")
     public void testAlturaIncorrectaWIdealWeight() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.idealWeight(231, Gender.FEMALE), 
+            new Usuario(231, 1, 1, Gender.FEMALE),
 		    "La altura introducida es incorrecta para una mujer."
         );
     }
@@ -53,7 +53,7 @@ public class HealthCalcTest {
     @DisplayName("Test género incorrecto (idealWeight)")
     public void testGeneroIncorrectoIdealWeight() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.idealWeight(2, null), 
+            new Usuario(2, 1, 1, null),
 		    "El género introducido no es correcto. Debe ser 'M' (hombre) o 'W' (mujer)"
         );
     }
@@ -62,7 +62,7 @@ public class HealthCalcTest {
     @DisplayName("Test peso ideal incorrecto hombre")
     public void testPesoIdealIncorrectoM() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.idealWeight(47, Gender.FEMALE), 
+            new Usuario(47, 1, 1, Gender.MALE),
 		    "El peso ideal calculado (hombre) es erróneo (menor que 0)."
         );
     }
@@ -71,7 +71,7 @@ public class HealthCalcTest {
     @DisplayName("Test peso ideal incorrecto mujer")
     public void testPesoIdealIncorrectoW() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.idealWeight(35, Gender.FEMALE), 
+            new Usuario(35, 1, 1, Gender.FEMALE),
 		    "El peso ideal calculado (mujer) es erróneo (menor que 0)."
         );
     }
@@ -82,7 +82,7 @@ public class HealthCalcTest {
         int height = 165;
         Gender gender = Gender.MALE;
         float expected = height - 100 - (height - 150) / 4;
-        assertEquals(expected, calc.idealWeight(height, gender), 
+        assertEquals(expected, new Usuario(height, 1, 1, gender), 
 		"El cálculo del peso ideal (hombre) es incorrecto.");
     }
 
@@ -92,7 +92,7 @@ public class HealthCalcTest {
         int height = 150;
         Gender gender = Gender.FEMALE;
         float expected = height - 100 - (height - 150) / 2.5f;
-        assertEquals(expected, calc.idealWeight(height, gender), 
+        assertEquals(expected, new Usuario(height, 1, 1, gender), 
     	"El cálculo del peso ideal (mujer) es incorrecto.");
     }
 
@@ -102,7 +102,7 @@ public class HealthCalcTest {
     @DisplayName("Test altura igual a cero (basalMetabolicRate)")
     public void testAlturaCeroBasalMetabolicRate() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.basalMetabolicRate(59, 0, Gender.MALE, 18), 
+            calc.basalMetabolicRate(new Usuario(0, 59, 18, Gender.MALE)), 
 		    "La altura introducida debe ser > 0."
         );
     }
@@ -111,7 +111,7 @@ public class HealthCalcTest {
     @DisplayName("Test altura negativa (basalMetabolicRate)")
     public void testAlturaNegativaBasalMetabolicRate() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.basalMetabolicRate(90, -3, Gender.FEMALE, 25), 
+            calc.basalMetabolicRate(new Usuario(-3, 90, 25, Gender.FEMALE)), 
 		    "La altura introducida debe ser > 0."
         );
     }
@@ -120,7 +120,7 @@ public class HealthCalcTest {
     @DisplayName("Test altura incorrecta hombre (basalMetabolicRate)")
     public void testAlturaIncorrectaMBasalMetabolicRate() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.basalMetabolicRate(120, 253, Gender.MALE, 30), 
+            calc.basalMetabolicRate(new Usuario(253, 120, 30, Gender.MALE)), 
 		    "La altura introducida es incorrecta para un hombre."
         );
     }
@@ -129,7 +129,7 @@ public class HealthCalcTest {
     @DisplayName("Test altura incorrecta mujer (basalMetabolicRate)")
     public void testAlturaIncorrectaWBasalMetabolicRate() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.basalMetabolicRate(140, 246, Gender.FEMALE, 28), 
+            calc.basalMetabolicRate(new Usuario(246, 140, 28, Gender.FEMALE)), 
 		    "La altura introducida es incorrecta para una mujer."
         );
     }
@@ -138,7 +138,7 @@ public class HealthCalcTest {
     @DisplayName("Test género incorrecto (basalMetabolicRate)")
     public void testGeneroIncorrectoBasalMetabolicRate() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.basalMetabolicRate(45, 130, null, 12), 
+            calc.basalMetabolicRate(new Usuario(130, 45, 12, null)), 
 		    "El género introducido no es correcto. Debe ser 'M' (hombre) o 'W' (mujer)"
         );
     }
@@ -147,7 +147,7 @@ public class HealthCalcTest {
     @DisplayName("Test peso incorrecto")
     public void testPesoIncorrecto() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.basalMetabolicRate(-5, 46, Gender.FEMALE, 2), 
+            calc.basalMetabolicRate(new Usuario(46, -5, 2, Gender.FEMALE)), 
 		    "El peso introducido debe ser > 0."
         );
     }
@@ -156,7 +156,7 @@ public class HealthCalcTest {
     @DisplayName("Test edad incorrecta")
     public void testEdadIncorrecta() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.basalMetabolicRate(80, 179, Gender.MALE, -3), 
+            calc.basalMetabolicRate(new Usuario(179, 80, -3, Gender.MALE)), 
 		    "La edad introducida debe estar entre 0 y 140."
         );
     }
@@ -165,7 +165,7 @@ public class HealthCalcTest {
     @DisplayName("Test tasa metabolica basal incorrecta hombre")
     public void testBasalMetabolicRateIncorrectoM() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.basalMetabolicRate(3, 5, Gender.MALE, 45), 
+            calc.basalMetabolicRate(new Usuario(5, 3, 45, Gender.MALE)), 
 		    "La Tasa Metabólica Basal calculada (hombre) es errónea (menor que 0)."
         );
     }
@@ -174,7 +174,7 @@ public class HealthCalcTest {
     @DisplayName("Test tasa metabolica basal incorrecta mujer")
     public void testBasalMetabolicRateIncorrectoW() {
         assertThrows(IllegalArgumentException.class, () ->
-            calc.basalMetabolicRate(1, 7, Gender.FEMALE, 60), 
+            calc.basalMetabolicRate(new Usuario(7, 1, 60, Gender.FEMALE)), 
 		    "La Tasa Metabólica Basal calculada (mujer) es errónea (menor que 0)."
         );
     }
@@ -187,7 +187,7 @@ public class HealthCalcTest {
         Gender gender = Gender.MALE;
         int age = 15;
         float expected = 10 * weight + 6.25f * height - 5 * age + 5;
-        assertEquals(expected, calc.basalMetabolicRate(weight, height, gender, age),
+        assertEquals(expected, calc.basalMetabolicRate(new Usuario(height, weight, age, gender)),
 	    "El cálculo de la tasa metabólica basal (hombre) es incorrecto");
     }
 
@@ -199,7 +199,7 @@ public class HealthCalcTest {
         Gender gender = Gender.FEMALE;
         int age = 27;
         float expected = 10 * weight + 6.25f * height - 5 * age - 161;
-        assertEquals(expected, calc.basalMetabolicRate(weight, height, gender, age),
+        assertEquals(expected, calc.basalMetabolicRate(new Usuario(height, weight, age, gender)),
 	    "El cálculo de la tasa metabólica basal (mujer) es incorrecto");
     }
 }

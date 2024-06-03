@@ -7,7 +7,7 @@ El problema que trata este refactoring podría ser principalmente Primitive Obse
 Este problema comenta el uso excesivo de tipos primitivos en ciertas variables, en lugar de tipos específicos más adecuados.
 
 - refactorings aplicados -
-Podemos decir que se han aplicado principalmente 2 refactorings..
+Podemos decir que se han aplicado principalmente 2 refactorings.
 El primero sería Introduce Enum; introducción de un enumerado para representar valores específicos.
 El segundo sería Replace Value with Object; reemplazo del valor de datos primitivos con un objeto que represente mejor el concepto.
 
@@ -27,6 +27,37 @@ La refactorización incluye la creación del tipo enumerado y la actualización 
     - HealthCalcImpl: gender == 'f' -> gender.equals(Gender.FEMALE) | 4 lineas
     - Controlador: gender = 'm' -> gender = Gender.MALE | 1 linea
     - Controlador: gender = 'w' -> gender = Gender.FEMALE | 1 linea
-    - Tests: gender = 'm' -> gender = Gender.MALE | 8 lineas
-    - Tests: gender = 'w' -> gender = Gender.FEMALE | 11 lineas
-    - Tests: gender = 'x' -> gender = null | 2 lineas
+    - HealthTest: gender = 'm' -> gender = Gender.MALE | 8 lineas
+    - HealthTest: gender = 'w' -> gender = Gender.FEMALE | 11 lineas
+    - HealthTest: gender = 'x' -> gender = null | 2 lineas
+
+
+2. Agrupar los atributos 'height', 'weight', 'age' y 'gender' en una clase Person
+
+- bad smell -
+El problema que trata este refactoring podría ser principalmente Data Clumps-
+Este problema consiste en que los mismos grupos de datos que tienden a estar juntos en varias partes del código, deberían estar encapsulados en una clase separada.
+
+- refactorings aplicados -
+Podemos decir que se han aplicado principalmente 2 refactorings.
+El primero sería Move Field; mover los campos 'height', 'weight', 'age' y 'gender', de las clases a la nueva clase Person.
+El segundo sería Encapsulate Field; encapsular los campos mencionados en la nueva clase Person con métodos de acceso.
+
+- tipo/categoría del refactoring -
+Este refactoring es de tipo Class Refactoring.
+Consiste en una reestructuración y un cambio de las funcionalidades de ciertos atributos mediante las clases.
+
+- descripción -
+Se ha creado una clase nueva Person que agrupa los atributos 'height', 'weight', 'age' y 'gender'.
+La refactorización incluye la modificación de ciertas clases para utilizar la instancia de Person en lugar de manejar esos campos de manera individual.
+Este cambio mejora la cláridad del código, además de su organización. Facilita la reutilización de campos y la gestión de datos relacionados con el usuario.
+
+- registro de cambios manuales -
+    - Creación de la interfaz Person | 6 lineas
+    - Usuario: atributos, constructor y métodos | 47 lineas
+    - HealthCalc: float height, float weight, int age, Gender gender -> Persona user | 2 lineas
+    - HealthCalcImpl: eliminación lanzamiento de errores | 46 lineas
+    - HealthCalcImpl: float height, float weight, int age, Gender gender -> Persona user | 8 lineas
+    - Controlador : float height, float weight, int age, Gender gender -> new Usuario(height, weight, age, gender) | 2 lineas
+    - HealthHospitalAdapter: float height, float weight, int age, Gender gender -> new Usuario(height, weight, age, gender) | 2 lineas
+    - HealthTest: float height, float weight, int age, Gender gender -> new Usuario(height, weight, age, gender) | 20 lineas
